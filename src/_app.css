@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 30px;
+}
+
+.field-container {
+  display: inline-block;
+}
+
+label {
+  font-weight: 400;
+  font-size: 12px;
+  color: #333333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-container {
+  padding: 15px 10px;
+  border: 1px solid var(--color);
+  border-radius: 8px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-container .icons {
+  color: #828282;
+}
+
+input {
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+}
+
+input::placeholder {
+  font-weight: 500;
+  color: #828282;
+  font-size: 14px;
+}
+
+.field-container:focus-within label,
+.field-container:focus-within .text-helper {
+  color: #2962ff;
+}
+
+.field-container:focus-within .input-container {
+  border: 1px solid #2962ff;
+}
+
+input:focus {
+  outline: none;
+}
+
+.field-container:hover .input-container {
+  border: 1px solid #333333;
+}
+
+.field-container:hover label,
+.field-container:hover .text-helper {
+  color: #333333;
+}
+
+/* error label */
+[data-error="true"] .input-container,
+[data-error="true"]:focus-within .input-container {
+  border: 1px solid #d32f2f;
+}
+
+[data-error="true"] label,
+[data-error="true"]:focus-within label,
+[data-error="true"] .text-helper,
+[data-error="true"]:focus-within .text-helper {
+  color: #d32f2f;
+}
+
+/* input disabled */
+[data-disabled="true"] .input-container {
+  border: 1px solid #e0e0e0;
+  background-color: #f2f2f2;
+}
+
+.input-container input:disabled {
+  background-color: #f2f2f2;
+}
+
+[data-disabled="true"]:hover .input-container {
+  border: 1px solid #e0e0e0;
+}
+
+/* text helper */
+.text-helper {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+  font-weight: 400;
+  color: #828282;
+}
+
+/* size */
+[data-size="sm"] .input-container {
+  padding: 10px 10px;
+}
+
+[data-size="md"] .input-container {
+  padding: 15px 10px;
+}
+
+/* fullwidth */
+[data-full="true"] {
+  display: block;
+}
+
+[data-full="true"] .input-container,
+[data-full="true"] .input-container textarea {
+  width: 100%;
+}
+
+/* multiline */
+textarea {
+  resize: none;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+textarea::placeholder {
+  font-weight: 500;
+  color: #828282;
+  font-size: 14px;
+}
